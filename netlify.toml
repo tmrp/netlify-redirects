@@ -1,0 +1,16 @@
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[[edge_functions]]
+function = "edge-redirects"
+path = "/*"
+
+[dev]
+targetPort = 3000
+edge_functions = "netlify/edge-functions"
+functions = "netlify/functions"
+
+[build]
+publish = ".next"
+edge_functions = "netlify/edge-functions"
+functions = "netlify/functions"
