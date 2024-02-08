@@ -7,12 +7,11 @@ export const config: Config = {
     '/_next/*',
     '/__nextjs_original-stack-frame',
     '/_ipx/*',
-    '/favicon.ico',
   ],
   path: '/*',
 };
 
-export default async function EdgeRedirect(
+export default async function EdgeRedirects(
   request: Request,
   context: Context
 ): Promise<Response | void> {
