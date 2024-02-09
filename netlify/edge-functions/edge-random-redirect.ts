@@ -14,7 +14,7 @@ export default async function EdgeRandomRedirect(
   request: Request,
   context: Context
 ): Promise<Response | void> {
-  const netlifyHeaderToken = Deno.env.get('NETLIFY_HEADER_TOKEN') ?? '';
+  const netlifyHeaderToken = Netlify.env.get('NETLIFY_HEADER_TOKEN') ?? '';
 
   const url = new URL(request.url);
   const { origin, pathname } = url;
