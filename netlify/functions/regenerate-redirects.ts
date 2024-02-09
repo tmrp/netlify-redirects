@@ -29,8 +29,21 @@ const scheduledFunction: Handler = async () => {
 
   blobStore.delete('urls');
 
+  const response = await fetch(
+    'https://blob-redirects.netlify.app/.netlify/functions/generate-redirects',
+    {
+      headers: {
+        'x-netlify-header-token': process.env.NETLIFY_HEADER_TOKEN ?? '',
+      },
+    }
+  );
+
+  await response.json();
+
   return {
-    body: JSON.stringify({ message: 'Blobs deleted successfully' }),
+    body: JSON.stringify({
+      message: 'Creating new blob',
+    }),
     statusCode: 200,
   };
 };

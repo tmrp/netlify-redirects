@@ -1,6 +1,11 @@
 [[plugins]]
 package = "@netlify/plugin-nextjs"
 
+
+[[edge_functions]]
+function = "edge-random-redirect"
+path = "/redirects/random"
+
 [[edge_functions]]
 function = "edge-redirects"
 path = "/*"
