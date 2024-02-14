@@ -1,14 +1,14 @@
+[[headers]]
+for = "/*"
+[headers.values]
+access-control-allow-origin = "*" 
+
 [[plugins]]
 package = "@netlify/plugin-nextjs"
 
-
 [[edge_functions]]
 function = "edge-random-redirect"
-path = "/redirects/random"
-
-[[edge_functions]]
-function = "edge-redirects"
-path = "/*"
+path = "/redirect/random/from/*"
 
 [dev]
 targetPort = 3000
